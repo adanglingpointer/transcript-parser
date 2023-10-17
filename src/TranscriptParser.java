@@ -35,5 +35,7 @@ public class TranscriptParser {
             System.out.println(mat.group("weightedGPA"));
             System.out.println(mat.group("unweightedGPA"));
         }
+        // Note: * acts greedy to match as many characters as possible
+        //  use *? to prevent greedy behavior and only go up to first next match
     }
 }
