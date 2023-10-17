@@ -13,6 +13,12 @@ public class TranscriptParser {
                 """;
         String regex = """
                 Student\\sNumber:\\s(?<studentNum>\\d{10}).* # grab student number
+                Grade:\\s+(?<grade>\\d{1,2}).* # grab the grade
+                Birthdate:\\s+(?<birthMonth>\\d{2})/(?<birthDay>\\d{2})/(?<birthYear>\\d{4}).* # grab birthday
+                Gender:\\s+(?<gender>\\w+)\\b.* # grab the gender
+                State\\sID:\\s+(?<stateID>\\d+)\\b.* # grab the state ID
+                Weighted\\)\\s+(?<weightedGPA>[\\d.]+)\\b.* # grab the weighted GPA
+                Unweighted\\)\\s+(?<unweightedGPA>[\\d.]+)\\b.* # grab the unweighted GPA
                 """;
 
         Pattern pat = Pattern.compile(regex, Pattern.DOTALL | Pattern.COMMENTS);
@@ -20,6 +26,14 @@ public class TranscriptParser {
         Matcher mat = pat.matcher(transcript);
         if (mat.matches()) {
             System.out.println(mat.group("studentNum"));
+            System.out.println(mat.group("grade"));
+            System.out.println(mat.group("birthMonth"));
+            System.out.println(mat.group("birthDay"));
+            System.out.println(mat.group("birthYear"));
+            System.out.println(mat.group("gender"));
+            System.out.println(mat.group("stateID"));
+            System.out.println(mat.group("weightedGPA"));
+            System.out.println(mat.group("unweightedGPA"));
         }
     }
 }
