@@ -33,5 +33,18 @@ public class NumberStuff {
 
         int binary3 = 1 | 2;
         System.out.println(binary3); // 3
+
+        int anotherBinary = 0b01 | 0b10 | 0b100;
+        System.out.println(anotherBinary);  // 7
+        // 1 | 2 | 4
+
+        // or | will yield a 1 with any 1s
+        // and & will yield a 1 if all 1s
+
+        System.out.println(anotherBinary & 4); // 4
+        // determine which bits are on or off
+        // using a bit mask
+
+
     }
 }
