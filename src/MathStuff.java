@@ -1,3 +1,6 @@
+import java.security.SecureRandom;
+import java.util.Random;
+
 public class MathStuff {
     public static void main(String[] args) {
         System.out.println(1 * 2 + 3 - 4); // 1
@@ -59,5 +62,20 @@ public class MathStuff {
 
         // Note: ctrl + q
         //       brings up documentation on any function our cursor is within
+
+        Random random = new Random();
+        // Java's random function, have to import
+        System.out.println(random.nextInt(10)); // 8
+        System.out.println(random.nextInt(10)); // 9
+        System.out.println(random.nextInt(10)); // 3
+        System.out.println(random.nextInt(10)); // 7
+        Random random2 = new Random(24);
+        // supplying a seed
+        System.out.println(random2.nextInt(10)); // 5
+
+        SecureRandom random3 = new SecureRandom();
+        System.out.println(random3.nextInt(10)); // 8
+        // including 0 through 9
+        // better, more even distribution of numbers
     }
 }
