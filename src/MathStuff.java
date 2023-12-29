@@ -77,5 +77,11 @@ public class MathStuff {
         System.out.println(random3.nextInt(10)); // 8
         // including 0 through 9
         // better, more even distribution of numbers
+
+        int num1b = 3;
+        int num2b = 3;
+        System.out.println(num1b == num2b); // true
+        System.out.println(num1b != num2b); // false
+        System.out.println(num1b > num2b); // false
     }
 }
