@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.security.SecureRandom;
 import java.util.Random;
 
@@ -83,5 +86,21 @@ public class MathStuff {
         System.out.println(num1b == num2b); // true
         System.out.println(num1b != num2b); // false
         System.out.println(num1b > num2b); // false
+
+        System.out.println(new BigDecimal(".3145683").add(new BigDecimal("5.321")));
+        // 5.6355683
+        // available methods: .subtract, .multiply, .divide, .sqrt, .max,
+        //   .abs, .remainder
+
+        // System.out.println(new BigDecimal(".03828435").divide(new BigDecimal("5.321")));
+        // Non-terminating decimal expansion; no exact representable decimal result.
+
+        MathContext mc = new MathContext(7, RoundingMode.HALF_UP);
+        System.out.println(new BigDecimal(".03828435").divide(new BigDecimal("5.321"), mc));
+        // 0.007194954
+        // seven meaningful digits not including zeros
+
+
+
     }
 }
