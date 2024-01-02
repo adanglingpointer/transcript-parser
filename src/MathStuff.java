@@ -100,7 +100,5 @@ public class MathStuff {
         // 0.007194954
         // seven meaningful digits not including zeros
 
-
-
     }
 }
