@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
 public class CompoundInterestCalc {
     // B = P(1 + r)^Y + c[((1 + r)^Y - 1)/r]
@@ -17,8 +18,12 @@ public class CompoundInterestCalc {
     }
 
     public static void main(String[] args) {
+        NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
         BigDecimal balance = CompoundInterestCalc.calculate("10000.00", ".08", 10, "1000");
         System.out.println(balance);
         // 36075.8124386377007104000000
+
+        System.out.println(moneyFormatter.format(balance));
+        // $36,075.81
     }
 }
