@@ -68,5 +68,12 @@ public class NumberStuff {
         System.out.println(num5b.doubleValue()); // 1024.0
 
         BigInteger myInt = new BigInteger("32872378328756");
+
+        String aString = "32";
+        int age = Integer.parseInt(aString);
+        // This converts a string into an integer
+
+        System.out.printf("You will be %d age in 15 years.%n", age + 15);
+        // You will be 47 age in 15 years.
     }
 }
